@@ -2,7 +2,7 @@
 
 ### Installation 🚀
 
-1. **Install Node.js and NPM on Ubuntu:**
+1. **Install Node.js and NPM on Ubuntu:**.
    - Make sure you have Node.js 16.x and NPM installed on your machine. If not, you can install them using the following commands:
      ```bash
      curl -s https://deb.nodesource.com/setup_16.x | sudo bash

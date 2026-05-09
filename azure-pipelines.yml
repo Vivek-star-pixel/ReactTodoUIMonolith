@@ -27,3 +27,19 @@ stages:
           npm run build
             dir build
 
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
+        ArtifactName: 'todo-artifact'
+        publishLocation: 'Container'
+
+# stages:
+# - stage: setup_nodejs
+#   displayName: install_runtime_env_node
+  
+#   jobs:
+#   - job: installnodejs
+#     steps:
+
+
+

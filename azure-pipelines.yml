@@ -11,9 +11,7 @@ stages:
     steps:
 
     -  checkout: self
-
-    - task: NodeAndNpmTool@1
+    - task: NodeTaskRunnerInstaller@0
       inputs:
-        versionSpec: '16.x'
-        checkLatest: true
+        nodeVersion: '16'
 

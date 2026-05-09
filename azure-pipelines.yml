@@ -33,13 +33,24 @@ stages:
         artifact: 'todo-arti'
         publishLocation: 'pipeline'
 
-# stages:
-# - stage: setup_nodejs
-#   displayName: install_runtime_env_node
-  
-#   jobs:
-#   - job: installnodejs
-#     steps:
 
+- stage: Build_Artifact
+  displayName: Build and Archive Artifacts
+  dependsOn: setup_nodejs
+  jobs:
+  - job: ArchiveAnd_and_Publish
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'current'
+        artifactName: 'todo-arti'
+        targetPath: '$(Pipeline.Workspace)/todo-arti'
 
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '(Pipeline.Workspace)/todo-arti'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
+        replaceExistingArchive: true
 

@@ -27,11 +27,11 @@ stages:
           npm run build
             dir build
 
-    - task: PublishBuildArtifacts@1
+    - task: PublishPipelineArtifact@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
-        ArtifactName: 'todo-artifact'
-        publishLocation: 'Container'
+        targetPath: '$(Build.SourcesDirectory)/build'
+        artifact: 'todo-arti'
+        publishLocation: 'pipeline'
 
 # stages:
 # - stage: setup_nodejs

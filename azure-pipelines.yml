@@ -57,5 +57,5 @@ stages:
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)/build.zip'
-        artifact: 'todo-arti'
+        artifact: 'todo-arti-final-artifact'
         publishLocation: 'pipeline'

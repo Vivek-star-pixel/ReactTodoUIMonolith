@@ -15,3 +15,15 @@ stages:
       inputs:
         nodeVersion: '16'
 
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: '$(Build.SourcesDirectory)'
+
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          npm run build
+            dir build
+

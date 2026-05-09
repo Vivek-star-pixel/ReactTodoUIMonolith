@@ -48,7 +48,7 @@ stages:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: '(Pipeline.Workspace)/todo-arti'
+        rootFolderOrFile: '$(Pipeline.Workspace)/todo-arti'
         includeRootFolder: true
         archiveType: '7z'
         archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'

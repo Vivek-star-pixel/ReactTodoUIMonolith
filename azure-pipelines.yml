@@ -50,7 +50,7 @@ stages:
       inputs:
         rootFolderOrFile: '(Pipeline.Workspace)/todo-arti'
         includeRootFolder: true
-        archiveType: 'zip'
+        archiveType: '7z'
         archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
         replaceExistingArchive: true
 

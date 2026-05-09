@@ -54,3 +54,8 @@ stages:
         archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
         replaceExistingArchive: true
 
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/build.zip'
+        artifact: 'todo-arti'
+        publishLocation: 'pipeline'

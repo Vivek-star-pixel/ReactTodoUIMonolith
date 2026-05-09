@@ -9,3 +9,13 @@ stages:
   jobs:
   - job: installnodejs
     steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: '- checkout: self'
+
+    - task: NodeAndNpmTool@1
+      inputs:
+        versionSpec: '16.x'
+        checkLatest: true
+
